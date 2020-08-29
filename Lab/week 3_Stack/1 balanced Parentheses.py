@@ -10,4 +10,11 @@ def matched(str):
     return count == 0
 
 txt = input("Enter Input : ")
-print(matched(txt))
+if matched(txt) == True:
+    print("Parentheses : Matched ! ! !")
+else:
+    print("Parentheses : Unmatched ! ! !")
+
+
+
+
