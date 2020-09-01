@@ -1,1 +1,1 @@
-print("sadfa")
+n = input("Enter Input : ")
