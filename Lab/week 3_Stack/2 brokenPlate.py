@@ -1,3 +1,13 @@
+"""
+Enter Input : 1 10,5 20,3 30,3 40,4 50
+10
+40
+30
+
+Enter Input : 90 8,68 99,44 3,44 102,50 2
+102
+3
+"""
 class Stack:
     def __init__(self):
          self.items = []
@@ -17,6 +27,9 @@ class Stack:
     def size(self):
         return len(self.items)
 
+    def __str__(self):
+        return str(self.items)
+
 n = input('Enter Input : ').split(',')  
 s = Stack()
 for e in n:
@@ -26,4 +39,3 @@ for e in n:
         while (s.size() and s.peek()[0] < int(w)):
             print(s.pop()[1])
     s.push((int(w),int(f)))
-     
