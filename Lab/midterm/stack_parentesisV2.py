@@ -1,7 +1,7 @@
 class Stack:
     def __init__(self):
         self.items = []
-    
+
     def push(self, item):
         self.items.append(item)
 
@@ -10,38 +10,36 @@ class Stack:
 
     def peek(self):
         return self.items[len(self.items)-1]
-
+    
     def isEmpty(self):
         return self.items == []
 
     def size(self):
         return len(self.items)
 
-def match(op, cl):
-    opeN = '([{'
-    closE = ')]}'
-    return opeN.index(op) == closE.index(cl)
-    
-inp = str(input('Enter Input : '))
-li = list(inp)
+def match(o,c):
+    openn = '([{'
+    close = ')]}'
+    return openn.index(o) == close.index(c)
+
+inp = input('Enter input : ')
+inp = list(inp)
 s = Stack()
 error = 0
 
-for i in inp:
-    if i in '([{' :
-        s.push(i)
-    elif i in ')]}':
-        if s.size() > 0:
-            if not match(s.pop(), i):  # i == close ,  s.pop() == open
+for e in inp:
+    if e in '([{':
+        s.push(e)
+    elif e in ')]}':
+        if s.size() > 0 :
+            if match(s.pop(), e):
                 error = 1
             else:
                 error = 2
-
 if s.size() > 0:
     error = 3
 
-if error == 1:
-    print('Parentheses : Unmatched ! ! !')  
-elif error == 2:
-    print('Parentheses : Matched ! ! !')
-
+if error == 1 :
+    print('Match !!!')
+elif error == 2 :
+    print('Not Match !!!')

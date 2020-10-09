@@ -12,10 +12,11 @@ for n in range(len(order2)) :
 
 def hasNoDuplicates(lst):
     if len(lst) == len(set(lst)) and len(lst) >= 0:
-
         print('NO Duplicate')
     elif len(lst) != len(set(lst)) :
         print('Duplicate')
+
+
 for book in shelf.split():
     if book != ' ':
         inShelf.append(book)

@@ -20,7 +20,7 @@ combo = 0
 for e in n:
     stack.append(e)
     if len(stack) > 2:
-        if stack[-1] == stack[-2] and stack[-2] == stack[-3]:
+        if stack[-1] == stack[-2] == stack[-3]:
             for e in range(3):
                 stack.pop()
             combo += 1
