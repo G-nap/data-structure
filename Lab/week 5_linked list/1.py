@@ -1,19 +1,19 @@
 class Node:
-    def __init__(self, value):
-        self.value = value
+    def __init__(self, data):
+        self.data = data
         self.next = None
 
 class LinkedList:
-    def __init__(self):  #สร้าง Head ขึ้นมาเพื่อบอกว่าจุดเริ่มต้นของ Linked List คือตรงไหน
+    def __init__(self):  #สร้าง Head ขึ้นมาเพื่อบอกว่าจุดเริ่มต้นของ Linked List คือตรงไหน   เริ่มจากยังไม่มีข้อมูล
         self.head = None
         self._size = 0
 
     def __str__(self):   #คืนค่าเป็นสตริงซึ่งบอกว่า Linked List เราตั้งแต่หัวไปจนท้ายมีตัวอะไรบ้าง
         if self.isEmpty():
             return 'Empty'
-        cur, s = self.head, str(self.head.value) + ' '
+        cur, s = self.head, str(self.head.data) + ' '
         while cur.next != None:
-            s += str(cur.next.value) + ' '
+            s += str(cur.next.data) + ' '
             cur = cur.next
         return s
 
@@ -22,9 +22,9 @@ class LinkedList:
 
     def append(self, item):   #add Item เข้า Linked List จากด้านหลัง ไม่คืนค่า
         NewNode  = Node(item)
-        if self.head is None:
+        if self.head is None: #ถ้าไม่มี head ให้สร้าง
             self.head = NewNode 
-        else:
+        else: # ถ้ามี head
             laste  = self.head
             while laste.next != None:
                 laste  = laste.next
@@ -45,7 +45,7 @@ class LinkedList:
         if self.isEmpty():
             return 'Not Found'
         while NewNode is not None:
-            if NewNode.value == item:
+            if NewNode.data == item:
                 return 'Found'
             if NewNode == item:
                 return NewNode
@@ -59,11 +59,11 @@ class LinkedList:
             return -1
         
         if self.size() == 1:       
-            if node.value == item:
+            if node.data == item:
                 return index
 
         while node.next != None :
-            if node.value == item:
+            if node.data == item:
                 return index
             node = node.next
             index += 1

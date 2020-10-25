@@ -17,4 +17,4 @@ def rec_pattern(number, row):
             row += 1
             rec_pattern(number, row)
 
-rec_pattern(int(input("Enter Input : ")),0)
+rec_pattern(int(input("Enter Input : ")),0) 
