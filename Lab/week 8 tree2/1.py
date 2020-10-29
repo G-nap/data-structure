@@ -52,7 +52,7 @@ class BST:
     return self.root
 
   def insert_recur(self, node, data):
-    if node.data > data:
+    if node.data > data: # data คือตัวใหม่, node.data คือตัวก่อนหน้า
       print("L", end= '')
       if not node.left:
         node.left = Node(data)
