@@ -181,23 +181,25 @@ class AVL(object):
   
         # Case 1 - Left Left 
         if balance > 1 and data < node.left.data: 
-          print('Not Balance, Rebalance!')
-          return self.right_rotate(node) 
+            print('Not Balance, Rebalance!')
+            return self.right_rotate(node) 
   
         # Case 2 - Right Right 
         if balance < -1 and data >= node.right.data: 
-          print('Not Balance, Rebalance!')   
-          return self.left_rotate(node) 
+            print('Not Balance, Rebalance!')   
+            return self.left_rotate(node) 
   
         # Case 3 - Left Right 
         if balance > 1 and data >= node.left.data: 
-          node.left = self.left_rotate(node.left) 
-          return self.right_rotate(node) 
+            print('Not Balance, Rebalance!') 
+            node.left = self.left_rotate(node.left) 
+            return self.right_rotate(node) 
   
         # Case 4 - Right Left 
         if balance < -1 and data < node.right.data:  
-          node.right = self.right_rotate(node.right) 
-          return self.left_rotate(node) 
+            print('Not Balance, Rebalance!') 
+            node.right = self.right_rotate(node.right) 
+            return self.left_rotate(node) 
   
         return node 
   
