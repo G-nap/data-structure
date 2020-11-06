@@ -18,13 +18,12 @@ def bubbleSort(arr):
         arr[j],arr[j+1] = arr[j+1], arr[j]
 
 def selectionSort(arr):
-  size = len(arr)
-  for step in range(size):
-    min_idx = step
-    for i in range(step+1, size): 
-      if arr[i] > arr[min_idx]:
-        min_idx = i
-    arr[step], arr[min_idx] = arr[min_idx], arr[step]
+  for i in range(len(arr)):
+    min_idx = i
+    for j in range(i+1, len(arr)): 
+      if arr[j] < arr[min_idx]:
+        min_idx = j
+    arr[i], arr[min_idx] = arr[min_idx], arr[i]
 
 def insertionSort(arr):
   size = len(arr)
@@ -40,6 +39,6 @@ def insertionSort(arr):
 
 #inp = [int(i) for i in input('Enter Input : ').split()]
 inp = [64, 25, 12, 22, 11 , 33]  # 11 12 22 25 64 
-insertionSort(inp)
+selectionSort(inp)
 for i in range(len(inp)):
   print('%d' %inp[i],end =" ")

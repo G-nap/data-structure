@@ -28,7 +28,7 @@ def selectionSort(arr):  # min swap to first
     for j in range(i+1, len(arr)): 
       # to sort in descending order, change > to < in this line
       # select the minimum element in each loop
-      if arr[j] > arr[min_idx]: ### change > or <
+      if arr[j] < arr[min_idx]: ### change > or <
         min_idx = i
     arr[i], arr[min_idx] = arr[min_idx], arr[i]
 
